@@ -2,6 +2,12 @@
 
 namespace App;
 
+/**
+ * Thids class is used to generate input
+ *
+ * Class InputGenerator
+ * @package App
+ */
 class InputGenerator
 {
     /**
