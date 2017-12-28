@@ -4,8 +4,13 @@ namespace App;
 
 class InputGenerator
 {
-    private static $size = 0;
-    const MAX_SIZE = 100;
+    /**
+     * This variable
+     *
+     * @var int
+     */
+    private static $size = 0; // runtime couple's size to match given by user
+    const MAX_SIZE = 100; // number of couples saved in below variables
 
     private static $men = [
         "Oliver","George","Harry","Jack","Jacob","Noah","Charlie","Muhammad","Thomas","Oscar","William","James","Henry",
@@ -29,17 +34,39 @@ class InputGenerator
         "Clara","Sara","Beatrice","Darcy","Leah","Arabella","Hollie","Sarah","Maddison","Katie","Eloise",
     ];
 
+    /**
+     * This variable will hold number of men given by userat runtime
+     *
+     * @var array
+     */
     private static $slicedMen;
+
+    /**
+     * This variable will hold number of women given by userat runtime
+     *
+     * @var array
+     */
     private static $slicedWomen;
 
+    /**
+     * This method sets size of cuoples that user wants to match at runtime
+     *
+     * @param int $size
+     * @return void
+     */
     public static function setInputSize($size)
     {
-        static::$size = $size > 50 ? 50 : $size; // check in case of given input is gt 50
+        static::$size = $size > static::MAX_SIZE ? static::MAX_SIZE : $size; // check in case of given input is gt MAX_SIZE
 
-        static::$slicedMen   = static::$size == 50 ? static::$men : array_slice(static::$men, 0, static::$size);
-        static::$slicedWomen = static::$size == 50 ? static::$women : array_slice(static::$women, 0, static::$size);
+        static::$slicedMen   = static::$size == static::MAX_SIZE ? static::$men : array_slice(static::$men, 0, static::$size);
+        static::$slicedWomen = static::$size == static::MAX_SIZE ? static::$women : array_slice(static::$women, 0, static::$size);
     }
 
+    /**
+     * This method will return men list number of given by user
+     *
+     * @return array
+     */
     public static function getInputForMen()
     {
         $inputList = [];
@@ -52,6 +79,11 @@ class InputGenerator
         return $inputList;
     }
 
+    /**
+     * This method will return women list number of given by user
+     *
+     * @return array
+     */
     public static function getInputForWomen()
     {
         $inputList = [];
