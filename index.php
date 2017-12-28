@@ -5,6 +5,12 @@ include "input_generator.php";
 use App\InputGenerator;
 use App\StableMariage;
 
+/**
+ * This method asks user to enter number of couples that he/she wants to match
+ *
+ * @param string $prompt
+ * @return int
+ */
 function read($prompt)
 {
     if (PHP_OS == 'WINNT') { // for windows

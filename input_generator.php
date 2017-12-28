@@ -11,12 +11,12 @@ namespace App;
 class InputGenerator
 {
     /**
-     * This variable
+     * This property
      *
      * @var int
      */
     private static $size = 0; // runtime couple's size to match given by user
-    const MAX_SIZE = 100; // number of couples saved in below variables
+    const MAX_SIZE = 100; // number of couples saved in below properties
 
     private static $men = [
         "Oliver","George","Harry","Jack","Jacob","Noah","Charlie","Muhammad","Thomas","Oscar","William","James","Henry",
@@ -41,14 +41,14 @@ class InputGenerator
     ];
 
     /**
-     * This variable will hold number of men given by userat runtime
+     * This property will hold number of men given by userat runtime
      *
      * @var array
      */
     private static $slicedMen;
 
     /**
-     * This variable will hold number of women given by userat runtime
+     * This property will hold number of women given by userat runtime
      *
      * @var array
      */
